@@ -1,0 +1,99 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card {
+  background-color: var(--white-color);
+  width: 80%;
+  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  animation: animat-popup 0.4s linear;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  list-style-type: none;
+}
+
+.order {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.order::after {
+  content: "";
+  width: calc(100% - 20px);
+  height: 2px;
+  background-color: var(--red-color);
+  position: absolute;
+  bottom: 0;
+}
+
+.total {
+  padding: 20px 10px 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.total h3 {
+  font-size: clamp(22px, 4vw, 26px);
+}
+
+.total span {
+  color: var(--red-color);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 24px);
+}
+.buttons {
+  display: flex;
+  column-gap: 10px;
+  justify-content: flex-end;
+}
+
+.close-btn,
+.order-btn {
+  padding: 5px 20px;
+  border: 2px solid var(--red-color);
+}
+
+.close-btn {
+  color: var(--red-color);
+  background-color: transparent;
+}
+
+.order-btn {
+  color: var(--white-color);
+  background-color: var(--red-color);
+}
+
+
+@keyframes animat-popup {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
